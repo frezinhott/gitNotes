@@ -1,0 +1,110 @@
+/*
+ *	To turn off tracking control, add a .gitignore file to the working directory.
+ *  In the file, specifiy any directory or file(s) that you want git to ignore.
+ */
+
+/*
+ *	List all of your config settings
+ */
+git config --list
+
+/*
+ *  List all the git commands.
+ */
+git help
+git help [command]
+
+/*
+ *	Configure your user name and email
+ */
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+/*
+ *  Create a new project repository in the current working directory
+ */
+git init
+
+/*
+ *  Registers an already initialized repository with github
+ */
+git remote add [github URL nick name] [github URL]
+git remote add helloWorldRepo https://github.com/frezinhott/hello-world.git
+
+/*
+ *	Copies a git hub repository to the current working directory
+ */
+git clone <repository URL>
+
+/*
+ *	Adds file(s) to the repository.  Always add files before commiting them (even updated ones).
+ *	-A :  Add all the new files to the repository
+ *  .     Add all the new files in the current directory to the repository
+ */
+git add [file]
+git add -A
+git add .
+
+/*
+ *	Removes a file from the repository.  Always commit after removing them.
+ */
+git rm [file name]
+
+/*
+ *	Rename of move a file.  Always commit after renaming or moving them.
+ */
+git mv [file name]
+
+/*
+ *	Removes file(s) from the git staging area back to the working directory.  (Opposite of git add)
+ */
+git reset HEAD [file]
+
+/*
+ *	Commit file(s)
+ *  -m : the commit message 
+ *  -a : add the files from the working directory to the staging area before commiting
+ */
+git commit -am "[message describing the commited changes]"
+git commit [file] -am "[message describing the commited changes]"
+
+/*
+ *	Checkout file(s) from the current branch
+ */
+git checkout --
+git checkout -- [file name]
+git checkout [commit number] -- [file name]
+
+/*
+ *	Syncs the local git repository TO the github.com online repository
+ *  -u : to specifiy the github URL nick name and branch
+ */
+git push
+git push -u [github URL nick name] [branch]
+git push -u helloWorldRepo master
+
+/*
+ *	Syncs the local git repository FROM the github.com online repository.
+ *  Makes sure that your working copy is current.
+ */
+git pull
+
+/*
+ *	Shows the commit log for a file
+ *  -author : Shows the commits for a particular person
+ */
+git log [file]
+git log --author "Trevor Chase"
+
+/*
+ *	Show the status of the repositor
+ */
+git status
+
+/*
+ *	Show the differences between the working directory and the repository
+ *  --staged : shows the differences between the staging area (after a git add) and the repository 
+ */
+git diff
+git diff -staged
+
